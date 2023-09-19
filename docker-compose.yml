@@ -38,3 +38,11 @@ services:
       - ./docker/pgadmin:/var/lib/pgadmin
     depends_on:
       - db
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 8000:8000
+    volumes:
+      - ./frontend/src:/app/src
